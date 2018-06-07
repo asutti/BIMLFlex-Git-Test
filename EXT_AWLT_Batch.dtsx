@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DTS:Executable
+  DTS:CreationDate="06/07/2018 09:42:16"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MM236307-PC"
+  DTS:CreatorName="ASUTTI"
+  DTS:DTSID="{184BE687-C685-4B1E-A503-F95758FBDFA9}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion=""
+  DTS:LocaleID="1033"
+  DTS:ObjectName="EXT_AWLT_Batch"
+  DTS:ProtectionLevel="0"
+  DTS:refId="Package"
+  DTS:VersionBuild="0"
+  DTS:VersionGUID="{24846A7E-56BA-4F39-B869-AC8F2257DD62}"
+  DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{33D2ACCE-6697-4AA3-8AB2-4547F2DB5D93}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExecutionID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2B6B7D38-374E-4A6E-BE29-0A7D54E4DA51}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExecutionStatus">
+      <DTS:VariableValue
+        DTS:DataType="8">E</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BE9ECCCD-68DE-4C14-A2F8-D72327607206}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="NextLoadStatus">
+      <DTS:VariableValue
+        DTS:DataType="8">P</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{60B52703-5EFD-424D-90F7-CFF86E468AEC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LastExecutionID">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{44381CE9-7669-4F9F-A05D-BBC75C2B6562}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="BatchStartTime">
+      <DTS:VariableValue
+        DTS:DataType="7">01/01/1900 00:00:00</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3253BE9D-B55D-4FF3-A7D8-822D8F13D1E6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ParentExecutionID">
+      <DTS:VariableValue
+        DTS:DataType="20">-1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{42A12C97-4BE6-4F78-A8D6-83B08CA36ACD}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ParentSourceGUID">
+      <DTS:VariableValue
+        DTS:DataType="8"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A7093B45-BEB8-4FA4-94CC-018E85F71BE4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ParentBatchStartTime">
+      <DTS:VariableValue
+        DTS:DataType="7">01/01/1900 00:00:00</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EE7E1455-6FAF-478E-95ED-8D08685E3BAB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="IsBatch">
+      <DTS:VariableValue
+        DTS:DataType="11">True</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{61BCC4A9-5FEE-4463-8254-32D02135FC0E}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::IsInitialLoad]"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="IsInitialLoad">
+      <DTS:VariableValue
+        DTS:DataType="11">False</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter"></DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DTSID="{323ACDE5-5353-4301-B255-D78EE2F3380D}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC - BimlFlex Package Start"
+      DTS:refId="Package\SEQC - BimlFlex Package Start">
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{ADB0D262-43E3-4194-A2FF-9181C0D66A5C}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1"
+          DTS:refId="Package\SEQC - BimlFlex Package Start.EventHandlers[OnPreExecute]">
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:AssignExpression=""
+              DTS:CreationName="STOCK:FORLOOP"
+              DTS:DTSID="{8708C9AF-F4A7-4442-B579-F8D9FC2808FB}"
+              DTS:EvalExpression="@[User::ExecutionID]==0"
+              DTS:ExecutableType="STOCK:FORLOOP"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="FRL - ExecutionID"
+              DTS:refId="Package\SEQC - BimlFlex Package Start.EventHandlers[OnPreExecute]\FRL - ExecutionID">
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:DTSID="{8014BE5C-61E5-4642-99D2-8FE4AA612FF6}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="SQL - Log Execution"
+                  DTS:refId="Package\SEQC - BimlFlex Package Start.EventHandlers[OnPreExecute]\FRL - ExecutionID\SQL - Log Execution"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="BimlCatalog"
+                      SQLTask:SqlStatementSource="EXEC [ssis].[LogExecution] @ExecutionGUID, @SourceGUID, @PackageName, @IsBatch, @ParentSourceGUID, @ParentExecutionID, @ServerExecutionID, @ExecutionID OUTPUT, @ExecutionStatus OUTPUT, @NextLoadStatus OUTPUT, @LastExecutionID OUTPUT, @BatchStartTime OUTPUT, 'EXT_AWLT'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ParameterBinding
+                        SQLTask:DataType="16"
+                        SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:ParameterName="@ExecutionGUID"
+                        SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+                      <SQLTask:ParameterBinding
+                        SQLTask:DataType="16"
+                        SQLTask:DtsVariableName="System::TaskID"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:ParameterName="@SourceGUID"
+                        SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+                      <SQLTask:ParameterBinding
+                        SQLTask:DataType="16"
+                        SQLTask:DtsVariableName="System::PackageName"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:ParameterName="@PackageName"
+                        SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+                      <SQLTask:ParameterBinding
+                        SQLTask:DataType="3"
+                        SQLTask:DtsVariableName="User::IsBatch"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:ParameterName="@IsBatch"
+                        SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+                      <SQLTask:ParameterBinding
+                        SQLTask:DataType="16"
+                        SQLTask:DtsVariableName="User::ParentSourceGUID"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:ParameterName="@ParentSourceGUID"
+                        SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+                      <SQLTask:ParameterBinding
+                        SQLTask:DataType="12"
+                        SQLTask:DtsVariableName="User::ParentExecutionID"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:ParameterName="@ParentExecutionID"
+                        SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+                      <SQLTask:ParameterBinding
+                        SQLTask:DataType="12"
+                        SQLTask:DtsVariableName="System::ServerExecutionID"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:ParameterName="@ServerExecutionID"
+                        SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+                      <SQLTask:ParameterBinding
+                        SQLTask:DataType="12"
+                        SQLTask:DtsVariableName="User::ExecutionID"
+                        SQLTask:ParameterDirection="Output"
+                        SQLTask:ParameterName="@ExecutionID"
+                        SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+                      <SQLTask:ParameterBinding
+                        SQLTask:DataType="16"
+                        SQLTask:DtsVariableName="User::ExecutionStatus"
+                        SQLTask:ParameterDirection="Output"
+                        SQLTask:ParameterName="@ExecutionStatus"
+                        SQLTask:ParameterSize="1"></SQLTask:ParameterBinding>
+                      <SQLTask:ParameterBinding
+                        SQLTask:DataType="16"
+                        SQLTask:DtsVariableName="User::NextLoadStatus"
+                        SQLTask:ParameterDirection="Output"
+                        SQLTask:ParameterName="@NextLoadStatus"
+                        SQLTask:ParameterSize="1"></SQLTask:ParameterBinding>
+                      <SQLTask:ParameterBinding
+                        SQLTask:DataType="12"
+                        SQLTask:DtsVariableName="User::LastExecutionID"
+                        SQLTask:ParameterDirection="Output"
+                        SQLTask:ParameterName="@LastExecutionID"
+                        SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+                      <SQLTask:ParameterBinding
+                        SQLTask:DataType="6"
+                        SQLTask:DtsVariableName="User::BatchStartTime"
+                        SQLTask:ParameterDirection="Output"
+                        SQLTask:ParameterName="@BatchStartTime"
+                        SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:CreationName="STOCK:SEQUENCE"
+                  DTS:DTSID="{F37DC54B-005D-47F8-BDCB-10BC5D0B6920}"
+                  DTS:ExecutableType="STOCK:SEQUENCE"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="SEQC - BimlFlex Cancel Execution"
+                  DTS:refId="Package\SEQC - BimlFlex Package Start.EventHandlers[OnPreExecute]\FRL - ExecutionID\SEQC - BimlFlex Cancel Execution">
+                  <DTS:Executables>
+                    <DTS:Executable
+                      DTS:CreationName="Microsoft.ExecuteSQLTask"
+                      DTS:DTSID="{4043F7B8-73D2-4554-8438-9BFFA217A2B9}"
+                      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                      DTS:LocaleID="-1"
+                      DTS:ObjectName="SQL - Log Execution End"
+                      DTS:refId="Package\SEQC - BimlFlex Package Start.EventHandlers[OnPreExecute]\FRL - ExecutionID\SEQC - BimlFlex Cancel Execution\SQL - Log Execution End"
+                      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                      <DTS:ObjectData>
+                        <SQLTask:SqlTaskData
+                          SQLTask:Connection="BimlCatalog"
+                          SQLTask:SqlStatementSource="EXEC [ssis].[LogExecutionEnd] @ExecutionID, @IsBatch" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                          <SQLTask:ParameterBinding
+                            SQLTask:DataType="12"
+                            SQLTask:DtsVariableName="User::ExecutionID"
+                            SQLTask:ParameterDirection="Input"
+                            SQLTask:ParameterName="@ExecutionID"
+                            SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+                          <SQLTask:ParameterBinding
+                            SQLTask:DataType="3"
+                            SQLTask:DtsVariableName="User::IsBatch"
+                            SQLTask:ParameterDirection="Input"
+                            SQLTask:ParameterName="@IsBatch"
+                            SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+                        </SQLTask:SqlTaskData>
+                      </DTS:ObjectData>
+                    </DTS:Executable>
+                  </DTS:Executables>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:PrecedenceConstraints>
+                <DTS:PrecedenceConstraint
+                  DTS:CreationName=""
+                  DTS:DTSID="{71B1CA8B-88AE-44EC-A961-A48D9C2AA944}"
+                  DTS:EvalOp="3"
+                  DTS:Expression="@ExecutionStatus == &quot;C&quot;"
+                  DTS:From="Package\SEQC - BimlFlex Package Start.EventHandlers[OnPreExecute]\FRL - ExecutionID\SQL - Log Execution"
+                  DTS:ObjectName="Constraint_SQL - Log Execution_To_SEQC - BimlFlex Cancel Execution"
+                  DTS:refId="Package\SEQC - BimlFlex Package Start.EventHandlers[OnPreExecute]\FRL - ExecutionID.PrecedenceConstraints[Constraint_SQL - Log Execution_To_SEQC - BimlFlex Cancel Execution]"
+                  DTS:To="Package\SEQC - BimlFlex Package Start.EventHandlers[OnPreExecute]\FRL - ExecutionID\SEQC - BimlFlex Cancel Execution"></DTS:PrecedenceConstraint>
+              </DTS:PrecedenceConstraints>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{13B781B3-602A-490A-A5D3-38AC341A4A65}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">True</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DTSID="{256A3BBD-CBA4-4F9C-805C-DD9439F400AD}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC - BimlFlex Package Main"
+      DTS:refId="Package\SEQC - BimlFlex Package Main">
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:DTSID="{8ED5579F-52C2-482E-940E-6BC2372217A4}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:ExecValueType="303"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SEQC - Main"
+          DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main">
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:CreationName="STOCK:SEQUENCE"
+              DTS:DTSID="{7640AE6D-02EB-4C37-8559-6A972C9073DF}"
+              DTS:ExecutableType="STOCK:SEQUENCE"
+              DTS:ExecValueType="303"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="SEQC - Load Tables Pass_1"
+              DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_1">
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:CreationName="Microsoft.ExecutePackageTask"
+                  DTS:DTSID="{9F8FBEEF-6B1C-432A-975F-654854AF88EB}"
+                  DTS:ExecutableType="Microsoft.ExecutePackageTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="EPT - EXT_AWLT_CustomerAddress"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_1\EPT - EXT_AWLT_CustomerAddress"
+                  DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:ObjectData>
+                    <ExecutePackageTask>
+                      <PackageName>EXT_AWLT_CustomerAddress.dtsx</PackageName>
+                      <UseProjectReference>True</UseProjectReference>
+                    </ExecutePackageTask>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:CreationName="Microsoft.ExecutePackageTask"
+                  DTS:DTSID="{26E85C2C-3184-4ED1-8766-C059508BC3E7}"
+                  DTS:ExecutableType="Microsoft.ExecutePackageTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="EPT - EXT_AWLT_ProductModelProductDescription"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_1\EPT - EXT_AWLT_ProductModelProductDescription"
+                  DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:ObjectData>
+                    <ExecutePackageTask>
+                      <PackageName>EXT_AWLT_ProductModelProductDescription.dtsx</PackageName>
+                      <UseProjectReference>True</UseProjectReference>
+                    </ExecutePackageTask>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:CreationName="Microsoft.ExecutePackageTask"
+                  DTS:DTSID="{B0D6B661-1A80-44B2-802A-4616AE2223A5}"
+                  DTS:ExecutableType="Microsoft.ExecutePackageTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="EPT - EXT_AWLT_SalesOrderDetail"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_1\EPT - EXT_AWLT_SalesOrderDetail"
+                  DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:ObjectData>
+                    <ExecutePackageTask>
+                      <PackageName>EXT_AWLT_SalesOrderDetail.dtsx</PackageName>
+                      <UseProjectReference>True</UseProjectReference>
+                    </ExecutePackageTask>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:PrecedenceConstraints>
+                <DTS:PrecedenceConstraint
+                  DTS:CreationName=""
+                  DTS:DTSID="{06437039-1607-4C31-BC36-EC61E2772248}"
+                  DTS:From="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_1\EPT - EXT_AWLT_CustomerAddress"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint_EPT - EXT_AWLT_CustomerAddress_To_EPT - EXT_AWLT_ProductModelProductDescription"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_1.PrecedenceConstraints[Constraint_EPT - EXT_AWLT_CustomerAddress_To_EPT - EXT_AWLT_ProductModelProductDescription]"
+                  DTS:To="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_1\EPT - EXT_AWLT_ProductModelProductDescription"></DTS:PrecedenceConstraint>
+                <DTS:PrecedenceConstraint
+                  DTS:CreationName=""
+                  DTS:DTSID="{A68116B7-6191-4914-B25F-DCBC13CD5F69}"
+                  DTS:From="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_1\EPT - EXT_AWLT_ProductModelProductDescription"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint_EPT - EXT_AWLT_ProductModelProductDescription_To_EPT - EXT_AWLT_SalesOrderDetail"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_1.PrecedenceConstraints[Constraint_EPT - EXT_AWLT_ProductModelProductDescription_To_EPT - EXT_AWLT_SalesOrderDetail]"
+                  DTS:To="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_1\EPT - EXT_AWLT_SalesOrderDetail"></DTS:PrecedenceConstraint>
+              </DTS:PrecedenceConstraints>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:CreationName="STOCK:SEQUENCE"
+              DTS:DTSID="{9CE6A801-4EE8-4D6D-A038-51AFEE79E291}"
+              DTS:ExecutableType="STOCK:SEQUENCE"
+              DTS:ExecValueType="303"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="SEQC - Load Tables Pass_2"
+              DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2">
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:CreationName="Microsoft.ExecutePackageTask"
+                  DTS:DTSID="{050045F1-01CE-4F00-A9B4-C62FC5AA95F8}"
+                  DTS:ExecutableType="Microsoft.ExecutePackageTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="EPT - EXT_AWLT_Address"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_Address"
+                  DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:ObjectData>
+                    <ExecutePackageTask>
+                      <PackageName>EXT_AWLT_Address.dtsx</PackageName>
+                      <UseProjectReference>True</UseProjectReference>
+                    </ExecutePackageTask>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:CreationName="Microsoft.ExecutePackageTask"
+                  DTS:DTSID="{FC9D2C00-2A36-49D1-BEA5-705B0192D639}"
+                  DTS:ExecutableType="Microsoft.ExecutePackageTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="EPT - EXT_AWLT_Customer"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_Customer"
+                  DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:ObjectData>
+                    <ExecutePackageTask>
+                      <PackageName>EXT_AWLT_Customer.dtsx</PackageName>
+                      <UseProjectReference>True</UseProjectReference>
+                    </ExecutePackageTask>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:CreationName="Microsoft.ExecutePackageTask"
+                  DTS:DTSID="{50BB29B6-2279-4DF9-9836-1A8F6B57194B}"
+                  DTS:ExecutableType="Microsoft.ExecutePackageTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="EPT - EXT_AWLT_Product"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_Product"
+                  DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:ObjectData>
+                    <ExecutePackageTask>
+                      <PackageName>EXT_AWLT_Product.dtsx</PackageName>
+                      <UseProjectReference>True</UseProjectReference>
+                    </ExecutePackageTask>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:CreationName="Microsoft.ExecutePackageTask"
+                  DTS:DTSID="{88DEA333-D8CC-4A9E-A01C-E6C4BD734697}"
+                  DTS:ExecutableType="Microsoft.ExecutePackageTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="EPT - EXT_AWLT_ProductDescription"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_ProductDescription"
+                  DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:ObjectData>
+                    <ExecutePackageTask>
+                      <PackageName>EXT_AWLT_ProductDescription.dtsx</PackageName>
+                      <UseProjectReference>True</UseProjectReference>
+                    </ExecutePackageTask>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:CreationName="Microsoft.ExecutePackageTask"
+                  DTS:DTSID="{8C7069F9-8074-4888-B493-C12546FBD9B6}"
+                  DTS:ExecutableType="Microsoft.ExecutePackageTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="EPT - EXT_AWLT_SalesOrderHeader"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_SalesOrderHeader"
+                  DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:ObjectData>
+                    <ExecutePackageTask>
+                      <PackageName>EXT_AWLT_SalesOrderHeader.dtsx</PackageName>
+                      <UseProjectReference>True</UseProjectReference>
+                    </ExecutePackageTask>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:PrecedenceConstraints>
+                <DTS:PrecedenceConstraint
+                  DTS:CreationName=""
+                  DTS:DTSID="{F287C41D-8928-4E5F-90CD-FCF9B8E3C52D}"
+                  DTS:From="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_Address"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint_EPT - EXT_AWLT_Address_To_EPT - EXT_AWLT_Customer"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2.PrecedenceConstraints[Constraint_EPT - EXT_AWLT_Address_To_EPT - EXT_AWLT_Customer]"
+                  DTS:To="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_Customer"></DTS:PrecedenceConstraint>
+                <DTS:PrecedenceConstraint
+                  DTS:CreationName=""
+                  DTS:DTSID="{59D952B5-73C1-4CDE-A854-0BB3F37C0718}"
+                  DTS:From="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_Customer"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint_EPT - EXT_AWLT_Customer_To_EPT - EXT_AWLT_Product"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2.PrecedenceConstraints[Constraint_EPT - EXT_AWLT_Customer_To_EPT - EXT_AWLT_Product]"
+                  DTS:To="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_Product"></DTS:PrecedenceConstraint>
+                <DTS:PrecedenceConstraint
+                  DTS:CreationName=""
+                  DTS:DTSID="{543D2338-337F-47BC-9563-D69166E1F0F0}"
+                  DTS:From="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_Product"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint_EPT - EXT_AWLT_Product_To_EPT - EXT_AWLT_ProductDescription"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2.PrecedenceConstraints[Constraint_EPT - EXT_AWLT_Product_To_EPT - EXT_AWLT_ProductDescription]"
+                  DTS:To="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_ProductDescription"></DTS:PrecedenceConstraint>
+                <DTS:PrecedenceConstraint
+                  DTS:CreationName=""
+                  DTS:DTSID="{68BE7E41-2720-4175-AD38-772C655EFEE8}"
+                  DTS:From="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_ProductDescription"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint_EPT - EXT_AWLT_ProductDescription_To_EPT - EXT_AWLT_SalesOrderHeader"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2.PrecedenceConstraints[Constraint_EPT - EXT_AWLT_ProductDescription_To_EPT - EXT_AWLT_SalesOrderHeader]"
+                  DTS:To="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2\EPT - EXT_AWLT_SalesOrderHeader"></DTS:PrecedenceConstraint>
+              </DTS:PrecedenceConstraints>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:CreationName="STOCK:SEQUENCE"
+              DTS:DTSID="{6B9CC474-5E35-4301-8F7E-C5A014D63C2F}"
+              DTS:ExecutableType="STOCK:SEQUENCE"
+              DTS:ExecValueType="303"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="SEQC - Load Tables Pass_3"
+              DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_3">
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:CreationName="Microsoft.ExecutePackageTask"
+                  DTS:DTSID="{ADADAE97-0FB2-42C2-8190-45F65C867DA8}"
+                  DTS:ExecutableType="Microsoft.ExecutePackageTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="EPT - EXT_AWLT_ProductCategory"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_3\EPT - EXT_AWLT_ProductCategory"
+                  DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:ObjectData>
+                    <ExecutePackageTask>
+                      <PackageName>EXT_AWLT_ProductCategory.dtsx</PackageName>
+                      <UseProjectReference>True</UseProjectReference>
+                    </ExecutePackageTask>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:CreationName="Microsoft.ExecutePackageTask"
+                  DTS:DTSID="{B984694C-A9D7-442F-AEB4-B3FB59DFAEF1}"
+                  DTS:ExecutableType="Microsoft.ExecutePackageTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="EPT - EXT_AWLT_ProductModel"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_3\EPT - EXT_AWLT_ProductModel"
+                  DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:ObjectData>
+                    <ExecutePackageTask>
+                      <PackageName>EXT_AWLT_ProductModel.dtsx</PackageName>
+                      <UseProjectReference>True</UseProjectReference>
+                    </ExecutePackageTask>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:PrecedenceConstraints>
+                <DTS:PrecedenceConstraint
+                  DTS:CreationName=""
+                  DTS:DTSID="{BC87F756-E884-4EF2-867E-339D68E557A5}"
+                  DTS:From="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_3\EPT - EXT_AWLT_ProductCategory"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint_EPT - EXT_AWLT_ProductCategory_To_EPT - EXT_AWLT_ProductModel"
+                  DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_3.PrecedenceConstraints[Constraint_EPT - EXT_AWLT_ProductCategory_To_EPT - EXT_AWLT_ProductModel]"
+                  DTS:To="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_3\EPT - EXT_AWLT_ProductModel"></DTS:PrecedenceConstraint>
+              </DTS:PrecedenceConstraints>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:CreationName=""
+              DTS:DTSID="{DB7C6802-1999-4797-B4F4-CAF4EA3E80A5}"
+              DTS:From="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_1"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint_SEQC - Load Tables Pass_1_To_SEQC - Load Tables Pass_2"
+              DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main.PrecedenceConstraints[Constraint_SEQC - Load Tables Pass_1_To_SEQC - Load Tables Pass_2]"
+              DTS:To="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2"></DTS:PrecedenceConstraint>
+            <DTS:PrecedenceConstraint
+              DTS:CreationName=""
+              DTS:DTSID="{C10211D9-E010-4EFC-864B-0319DBCA7B7B}"
+              DTS:From="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_2"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint_SEQC - Load Tables Pass_2_To_SEQC - Load Tables Pass_3"
+              DTS:refId="Package\SEQC - BimlFlex Package Main\SEQC - Main.PrecedenceConstraints[Constraint_SEQC - Load Tables Pass_2_To_SEQC - Load Tables Pass_3]"
+              DTS:To="Package\SEQC - BimlFlex Package Main\SEQC - Main\SEQC - Load Tables Pass_3"></DTS:PrecedenceConstraint>
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:DTSID="{C358BE58-80C5-4B8B-B6E0-3A8C02961BB6}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQC - BimlFlex Package End"
+      DTS:refId="Package\SEQC - BimlFlex Package End">
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{E771798A-6673-4D5B-BA6A-089B04D38A57}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL - Log Execution End"
+          DTS:refId="Package\SEQC - BimlFlex Package End\SQL - Log Execution End"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="BimlCatalog"
+              SQLTask:SqlStatementSource="EXEC [ssis].[LogExecutionEnd] @ExecutionID, @IsBatch" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:DataType="12"
+                SQLTask:DtsVariableName="User::ExecutionID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:ParameterName="@ExecutionID"
+                SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+              <SQLTask:ParameterBinding
+                SQLTask:DataType="3"
+                SQLTask:DtsVariableName="User::IsBatch"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:ParameterName="@IsBatch"
+                SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:CreationName=""
+      DTS:DTSID="{73B34724-F0F3-4563-8C61-D47BBB25586B}"
+      DTS:EvalOp="3"
+      DTS:Expression="@ExecutionStatus == &quot;E&quot;||@ExecutionStatus == &quot;R&quot;"
+      DTS:From="Package\SEQC - BimlFlex Package Start"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint_SEQC - BimlFlex Package Start_To_SEQC - BimlFlex Package Main"
+      DTS:refId="Package.PrecedenceConstraints[Constraint_SEQC - BimlFlex Package Start_To_SEQC - BimlFlex Package Main]"
+      DTS:To="Package\SEQC - BimlFlex Package Main"></DTS:PrecedenceConstraint>
+    <DTS:PrecedenceConstraint
+      DTS:CreationName=""
+      DTS:DTSID="{7B0557E4-D659-4A13-B012-A9681FAC05E1}"
+      DTS:From="Package\SEQC - BimlFlex Package Main"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint_SEQC - BimlFlex Package Main_To_SEQC - BimlFlex Package End"
+      DTS:refId="Package.PrecedenceConstraints[Constraint_SEQC - BimlFlex Package Main_To_SEQC - BimlFlex Package End]"
+      DTS:To="Package\SEQC - BimlFlex Package End"></DTS:PrecedenceConstraint>
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:CreationName="OnError"
+      DTS:DTSID="{62AEE3EB-9958-4620-92B5-66C7492B702D}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1"
+      DTS:refId="Package.EventHandlers[OnError]">
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{9F13BB72-73AA-4BAA-B94C-F0F40AF25EA2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL - Log Execution Error"
+          DTS:refId="Package.EventHandlers[OnError]\SQL - Log Execution Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="BimlCatalog"
+              SQLTask:SqlStatementSource="EXEC [ssis].[LogExecutionError] @ExecutionID, @IsBatch, @ErrorCode, @ErrorDescription" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:DataType="12"
+                SQLTask:DtsVariableName="User::ExecutionID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:ParameterName="@ExecutionID"
+                SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+              <SQLTask:ParameterBinding
+                SQLTask:DataType="3"
+                SQLTask:DtsVariableName="User::IsBatch"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:ParameterName="@IsBatch"
+                SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+              <SQLTask:ParameterBinding
+                SQLTask:DataType="16"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:ParameterName="@ErrorCode"
+                SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+              <SQLTask:ParameterBinding
+                SQLTask:DataType="16"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:ParameterName="@ErrorDescription"
+                SQLTask:ParameterSize="0"></SQLTask:ParameterBinding>
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{877D380F-9354-4783-825C-A9DD06F07833}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">True</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="User::ExecutionID"
+      DTS:ConfigurationVariable="\Package.Variables[User::ParentExecutionID].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{81E31B1A-C112-4B12-9483-092C0DC46A15}"
+      DTS:ObjectName="ParentExecutionID"></DTS:Configuration>
+    <DTS:Configuration
+      DTS:ConfigurationString="System::TaskID"
+      DTS:ConfigurationVariable="\Package.Variables[User::ParentSourceGUID].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{FF88A06C-3F57-47A7-B693-4D4EED89BCB8}"
+      DTS:ObjectName="ParentSourceGUID"></DTS:Configuration>
+    <DTS:Configuration
+      DTS:ConfigurationString="User::BatchStartTime"
+      DTS:ConfigurationVariable="\Package.Variables[User::ParentBatchStartTime].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{71CB595A-0041-4A39-87FD-255790F60BAB}"
+      DTS:ObjectName="ParentBatchStartTime"></DTS:Configuration>
+  </DTS:Configurations>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <AnnotationLayout
+          Text="Generated By BimlFlex Copyright (C) 2018 Varigence, Inc. 
+
+Licensed under the Varigence End User Software License Agreement. 
+You may not use this file or replicate any part of it except in compliance with the License. 
+You may obtain a copy of the End User Software License Agreement by contacting support@varigence.com."
+          ParentId="Package"
+          FontInfo="{x:Null}"
+          Size="500,50"
+          Id="4f4e33bd-6f23-40d6-ae6c-778d1247e468"
+          TopLeft="0,0" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

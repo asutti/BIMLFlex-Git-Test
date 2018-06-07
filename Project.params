@@ -1,0 +1,50 @@
+<SSIS:Parameters xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
+  <SSIS:Parameter SSIS:Name="RootPath">
+    <SSIS:Properties>
+      <SSIS:Property SSIS:Name="ID">{71e18c52-5ca2-4dc9-821c-791de846a01e}</SSIS:Property>
+      <SSIS:Property SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property SSIS:Name="Value">C:\Varigence\BimlFlex</SSIS:Property>
+      <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter SSIS:Name="LookupCachePath">
+    <SSIS:Properties>
+      <SSIS:Property SSIS:Name="ID">{8663f401-58bd-4f74-8082-255e99087a35}</SSIS:Property>
+      <SSIS:Property SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property SSIS:Name="Value">C:\Varigence\Cache</SSIS:Property>
+      <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter SSIS:Name="IsInitialLoad">
+    <SSIS:Properties>
+      <SSIS:Property SSIS:Name="ID">{4ac48bde-b1f0-4f13-8955-11e7ce53f557}</SSIS:Property>
+      <SSIS:Property SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+      <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter SSIS:Name="RecordSource">
+    <SSIS:Properties>
+      <SSIS:Property SSIS:Name="ID">{f7f6609e-35cd-4aab-a875-86bb4a7868fe}</SSIS:Property>
+      <SSIS:Property SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property SSIS:Name="Value">AWLT</SSIS:Property>
+      <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+</SSIS:Parameters>

@@ -1,0 +1,2 @@
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ObjectName="BimlCatalog" DTS:DTSID="{EFBD7CBD-CC7D-4C4C-B91C-5F03F533B99E}" DTS:refId="BimlCatalog" DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <DTS:ObjectData><DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"  DTS:ConnectionString="Data Source=(LocalDb)\LocalDBDemo;Initial Catalog=BimlCatalog;Integrated Security=True;"></DTS:ConnectionManager></DTS:ObjectData></DTS:ConnectionManager>

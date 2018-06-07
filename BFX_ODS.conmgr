@@ -1,0 +1,2 @@
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ObjectName="BFX_ODS" DTS:DTSID="{CA4F793A-3C32-4E34-A28E-A1BD96D46DAC}" DTS:refId="BFX_ODS" DTS:CreationName="OLEDB">
+    <DTS:ObjectData><DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ConnectionString="data source=(LocalDb)\LocalDBDemo;initial catalog=BFX_ODS;provider=SQLNCLI11;integrated security=SSPI"></DTS:ConnectionManager></DTS:ObjectData></DTS:ConnectionManager>

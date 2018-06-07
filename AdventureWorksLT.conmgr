@@ -1,0 +1,2 @@
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ObjectName="AdventureWorksLT" DTS:DTSID="{1BD386B3-485C-4620-B8F0-07AFD649F3EE}" DTS:refId="AdventureWorksLT" DTS:CreationName="OLEDB">
+    <DTS:ObjectData><DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ConnectionString="data source=(LocalDb)\LocalDBDemo;initial catalog=AdventureWorksLT2012;provider=SQLNCLI11.1;integrated security=SSPI"></DTS:ConnectionManager></DTS:ObjectData></DTS:ConnectionManager>
